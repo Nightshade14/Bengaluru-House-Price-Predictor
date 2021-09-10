@@ -41,9 +41,8 @@ def predict():
     For rendering results on HTML GUI
     '''
     final_features = [x for x in request.form.values()]
-    # final_features = [np.array(features)]
     output = predict_price(final_features[0],float(final_features[1]),int(final_features[2]),int(final_features[3]))
-    prediction_text = f'House Price: {output}\n'
+    prediction_text = 'Estimated House Price: ₹ {:,}'.format(int(output*100000))
 
     return render_template('prediction.html', prediction_text=prediction_text)
 
