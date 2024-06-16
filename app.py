@@ -6,8 +6,8 @@ import pickle
 
 # Initialize the flask App
 app = Flask(__name__)
-model_catboost_br = pickle.load(open('catboost_br.h5', 'rb'))
-model_lr = pickle.load(open('lr.h5', 'rb'))
+model_catboost_br = pickle.load(open('./model/catboost_br.h5', 'rb'))
+model_lr = pickle.load(open('./model/lr.h5', 'rb'))
 
 def predict_price(location, sqft, bath, bhk):
 
